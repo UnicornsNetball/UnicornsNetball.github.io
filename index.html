@@ -202,29 +202,19 @@
         <div class="inner">
           <h2>Upcoming Events</h2>
           <p>We currently hold monthly training sessions on Saturday afternoons at various locations across London. We also hold other events outside of this, including tournaments and socials. Scroll down to read more. <i>Note full members will get priority on any team spaces for tournaments and leagues</i></p>
-          <div class="items style1 medium">
-
-            <section>
-              <h2>Queerballers x Unicorns Joint Tournament</h2>
-              <span><img alt="Unicorns LGBTQIA+ Netball Logo" src="images/Unicorns_LGBT_Netball_Logo_Plain.png" width="50" height="50"/></span>
-              <div>Saturday, September 16th</div>
-              <p>12:00-17:00</p>
-              <p>Finsbury Park, London</p>
-              <ul class="actions stacked">
-                <li><a target="_blank" href="https://docs.google.com/forms/d/17W4tWpHExFm9GyTQo6KxMc9RYZa_myHIA3iBZgul7nM/viewform?edit_requested=true" class="button">Sign Up</a></li>
-              </ul>
-            </section>
-            <section>
-              <h2>Unicorns Monthly Training</h2>
-              <span><img alt="Unicorns LGBTQIA+ Netball Logo" src="images/Unicorns_LGBT_Netball_Logo_Plain.png" width="50" height="50"/></span>
-              <div>Saturday, October 7th</div>
-              <p>14:45-17:00</p>
-              <p>Kennington, London</p>
-
-              <ul class="actions stacked">
-                <li><a target="_blank" href="https://www.eventbrite.co.uk/e/716524162057?aff=oddtdtcreator" class="button">Sign Up</a></li>
-              </ul>
-            </section>
+          <div style="padding:56.25% 0 0 0;position:relative;" class="smallContainer">
+            <iframe
+              src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%237986CB&ctz=UTC&showTitle=0&showTabs=0&showPrint=0&showTz=0&mode=AGENDA&showNav=0&showDate=0&showCalendars=0&src=Zjg4NjQyMTBhZmRmMzA2OTdhMGVlYWVkNWJiZjY2NWJhZmVlMTk5MjNkOWEzMWM3MjMyY2NkYzRjOWRhNzZhNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;"
+              >
+            </iframe>
+          </div>
+          <div style="padding:56.25% 0 0 0;position:relative;" class="bigContainer">
+            <iframe
+              src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%237986CB&ctz=UTC&showTitle=0&showTabs=0&showPrint=0&showTz=0&mode=MONTH&showNav=1&showDate=1&showCalendars=0&src=Zjg4NjQyMTBhZmRmMzA2OTdhMGVlYWVkNWJiZjY2NWJhZmVlMTk5MjNkOWEzMWM3MjMyY2NkYzRjOWRhNzZhNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;"
+              >
+            </iframe>
           </div>
         </div>
       </section>
@@ -309,7 +299,6 @@
         </div>
         <div class="image">
           <img alt="Inclusion Award photo" src="images/gallery/ONE_award.jpeg" alt="" />
-          </iframe>
         </div>
       </section>
       <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
@@ -323,7 +312,6 @@
         </div>
         <div class="image">
           <img alt="Out for sports awards Most Inclusive Club photo" src="images/gallery/out_for_sport_award.png" alt="" />
-          </iframe>
         </div>
       </section>
       <section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
@@ -337,7 +325,6 @@
         </div>
         <div class="image">
           <img alt="Out For Sport Awards nominations image" src="images/gallery/out_for_sport_nomination.png" alt="" />
-          </iframe>
         </div>
       </section>
       <section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
@@ -353,7 +340,6 @@
         </div>
         <div class="image">
           <img alt="Out For Sport Awards image" src="images/gallery/group_4.jpg" alt="" />
-          </iframe>
         </div>
       </section>
       <!-- In the media -->
@@ -513,13 +499,22 @@
     <script>
       const toggleButton = document.getElementsByClassName('toggle-button')[0]
       const navbarLinks = document.getElementsByClassName('navbar-links')[0]
-
+      const smallContainer = document.getElementsByClassName('smallContainer')[0]
+      const bigContainer = document.getElementsByClassName('bigContainer')[0]
       toggleButton.addEventListener('click', () => {
         navbarLinks.classList.toggle('active')
       })
       navbarLinks.addEventListener('click', () => {
         navbarLinks.classList.toggle('active')
       })
-  </script>
+      if($(window).width() >= 1024) {
+        $('.smallContainer').hide();
+        $('.bigContainer').show();
+      }
+      if($(window).width() < 1024) {
+        $('.smallContainer').show();
+        $('.bigContainer').hide();
+      }
+</script>
 	</body>
 </html>
